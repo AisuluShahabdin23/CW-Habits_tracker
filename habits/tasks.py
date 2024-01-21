@@ -17,8 +17,7 @@ def send_notification():
         for user in users:
             if habit.time >= time_now - timedelta(minutes=15):
                 message = f"Напоминаю о привычке {habit.action}\n" \
-                          f"Завершив, можно:\n \
-    {habit.habits if habit.habits else habit.reward}"
+                          f"Завершив, можно: {habit.habits if habit.habits else habit.reward}"
                 send_message(token=token,
                              chat_id=user.chat_id,
                              message=message)
